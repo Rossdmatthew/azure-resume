@@ -8,18 +8,18 @@ using Microsoft.Extensions.Logging;
 
 namespace Api.Function;
 
-public class GetVisitorCounter
+public class GetVisitorCounterF
 {
-    private readonly ILogger<GetVisitorCounter> _logger;
+    private readonly ILogger<GetVisitorCounterF> _logger;
     private readonly IVisitorCounterService _visitorCounterService;
 
-    public GetVisitorCounter(ILogger<GetVisitorCounter> logger, IVisitorCounterService visitorCounterService)
+    public GetVisitorCounterF(ILogger<GetVisitorCounterF> logger, IVisitorCounterService visitorCounterService)
     {
         _logger = logger;
         _visitorCounterService = visitorCounterService;
     }
 
-    [Function("GetVisitorCounter")]
+    [Function("GetVisitorCounterF")]
     public async Task<UpdatedCounter> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
     [CosmosDBInput("AzureResume","Counter", Connection = "CosmosDbConnectionString", Id = "1",
             PartitionKey = "1")] Counter counter)
