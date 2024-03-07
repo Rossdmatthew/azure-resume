@@ -6,8 +6,8 @@
     <OutputType>Exe</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
-    <RootNamespace>Api</RootNamespace>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <RootNamespace>Backend</RootNamespace>
   <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
   <ItemGroup>
