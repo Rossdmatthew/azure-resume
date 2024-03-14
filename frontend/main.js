@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
         getVisitCount();
     })
     
-    const productionApiUrl = 'https://getvisitorcountf.azurewebsites.net/api/getvisitorcounterf'
+    const productionApiUrl = 'https://getvisitorcounterf.azurewebsites.net/'
     const localApiUrl = 'http://localhost:7071/api/GetVisitorCounterF';
     
     const getVisitCount = () => {
