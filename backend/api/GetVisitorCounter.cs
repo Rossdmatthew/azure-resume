@@ -1,27 +1,28 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Text.Json;
-using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 
 
-using Microsoft.Extensions.Logging;
-
 namespace Api.Function;
 
-public class GetVisitorCounterF
+public class GetVisitorCounter
 {
-    private readonly ILogger<GetVisitorCounterF> _logger;
+    private readonly ILogger<GetVisitorCounter> _logger;
     private readonly IVisitorCounterService _visitorCounterService;
 
-    public GetVisitorCounterF(ILogger<GetVisitorCounterF> logger, IVisitorCounterService visitorCounterService)
+    public GetVisitorCounter(ILogger<GetVisitorCounter> logger, IVisitorCounterService visitorCounterService)
     {
         _logger = logger;
         _visitorCounterService = visitorCounterService;
     }
 
-    [Function("GetVisitorCounterF")]
+    [Function("GetVisitorCounter")]
     public async Task<UpdatedCounter> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
-    [CosmosDBInput("AzureResume","Counter", Connection = "CosmosDbConnectionString", Id = "1",
+    [CosmosDBInput("AzureResume", "Counter", Connection = "CosmosDbConnectionString", Id = "1",
             PartitionKey = "1")] Counter counter)
     {
 
