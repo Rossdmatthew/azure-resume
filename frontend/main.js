@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     
     const getVisitCount = () => {
         let count = 30;
-        fetch(localApiUrl).then(response => {
+        fetch(productionApiUrl).then(response => {
             return response.json()
         }).then(response =>{
             console.log("Website called function API.");
