@@ -6,7 +6,7 @@ namespace Api.Function;
 public class UpdatedCounter
 {
 
-    [CosmosDBOutput("AzureResume", "Counter", Connection = "CosmosDbConnectionString")]
+    [CosmosDBOutput("AzureResume", "Counter", Connection = "AzureResumeConnectionString")]
     public Counter? NewCounter { get; set; }
     public HttpResponseData? HttpResponse { get; set; }
 }

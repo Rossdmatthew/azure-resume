@@ -43,7 +43,7 @@
     },
     {
       "label": "publish (functions)",
-      "command": "dotnet",
+      "command": "dotnet-isolated",
       "args": [
         "publish",
         "--configuration",
